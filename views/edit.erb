@@ -1,0 +1,15 @@
+<form action="/dishes/<%= @dish['id'] %>" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="_method" value="put">
+
+  <p>
+    <label for="">name</label>
+    <input type="text" name="name" value="<%= @dish.name %>">
+  </p>
+
+  <p>
+    <label for="">image</label>
+    <input type="file" name="imageFile" id="imageFile">
+  </p>
+
+  <button>win</button>
+</form>

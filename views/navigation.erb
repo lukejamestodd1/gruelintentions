@@ -1,0 +1,43 @@
+
+
+
+<% if logged_in? %>
+	<div class="alert alert-warning alert-dismissable fade in" role="alert" data-dismiss="alert" aria-label="Close">
+		<p>Welcome back <%= current_user.name %>. Never leave.</p> <span aria-hidden="true">&times;</span>
+	</div>
+   
+	<ul class="nav nav-pills">
+	  <li role="presentation" class="active"><a href="/">Home</a></li>
+	  <li role="presentation"><a href="/dishes/new">I did a gruel</a></li>
+
+
+
+
+	  <li role="presentation">
+
+	<form action="/session" method="post">
+   <input type="hidden" name="_method" value="delete">
+   <button>Logout</button>
+  </form>
+		</li>
+	</ul>
+
+  
+
+<% else %>
+   		<form action="/user/new">
+  		<button style="display: none;" name="signup">sign up</button>
+			</form>
+
+			<ul class="nav nav-pills">
+			  <li role="presentation" class="active"><a href="/">Home</a></li>
+			  <li role="presentation"><a href="/session/new">Login</a></li>
+			  <li role="presentation"><a href="/user/new">Sign Up</a></li>
+			  <li role="presentation"><a href="/dishes/new">I did a gruel</a></li>
+			</ul>
+
+ <% end %>
+
+
+
+

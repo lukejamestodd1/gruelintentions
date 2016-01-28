@@ -1,0 +1,15 @@
+<% @dish.errors.full_messages.each do |message| %>
+  <h2>DOOFUS: <%= message %> !</h2>
+  <% end %>
+
+<form action="/dishes" method="post" enctype="multipart/form-data">
+  <p>
+    <label for="">name</label>
+    <input type="text" name="name" value="potato and celery gruel">
+  </p>
+
+
+    <input type="file" name="imageFile" id="imageFile">
+
+  <button>win</button>
+</form>
