@@ -49,6 +49,8 @@ post '/dishes' do
   @dish.name = params[:name]
   @dish.user_id = session[:user_id]
   @dish.image = params[:imageFile]
+  @dish.description = params[:description]
+  @dish.username = current_user.name
 
   #@dish.dish_type_id = params[:dish_type_id]
   #if dish save, go to home. If not stay

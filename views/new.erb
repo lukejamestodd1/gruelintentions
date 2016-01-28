@@ -2,14 +2,22 @@
   <h2>DOOFUS: <%= message %> !</h2>
   <% end %>
 
-<form action="/dishes" method="post" enctype="multipart/form-data">
+<form action="/dishes" method="post" enctype="multipart/form-data" id="newDish">
   <p>
     <label for="">name</label>
-    <input type="text" name="name" value="potato and celery gruel">
+    <input type="text" name="name" value="CrazySexyGruel">
   </p>
-
-
+	
     <input type="file" name="imageFile" id="imageFile">
 
-  <button>win</button>
+
+		<label>desciption</label>
+
+		<textarea maxlength="400" rows="4" cols="50" name="description" form="newDish" input type="text" name="description">INGREDIENTS: oats, potatoes, water      METHOD: put everything in a pot and boil for a long time</textarea>
+
+
+  <button>Stab mix</button>
 </form>
+		
+
+		

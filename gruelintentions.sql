@@ -4,7 +4,8 @@ CREATE TABLE users (
 	id SERIAL4 PRIMARY KEY,
 	email VARCHAR(200) NOT NULL,
 	name VARCHAR(100),
-	password_digest VARCHAR(400) NOT NULL
+	password_digest VARCHAR(400) NOT NULL,
+	image VARCHAR(500)
 );
 
 CREATE TABLE dishes (
@@ -13,6 +14,7 @@ CREATE TABLE dishes (
   image_url VARCHAR(200),
   description VARCHAR(400),
   user_id INTEGER,
+  username VARCHAR(100),
   image VARCHAR(500)
 );
 
@@ -24,8 +26,8 @@ CREATE TABLE likes (
 
 INSERT INTO users ()
 
-
-
+ALTER TABLE dishes ADD username VARCHAR(100)
+ALTER TABLE users ADD image VARCHAR(500);
 
 [1] pry(main)> dish = Dish.new
 => #<Dish:0x007f840ccd86c8
