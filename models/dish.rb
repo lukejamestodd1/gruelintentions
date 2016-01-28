@@ -13,6 +13,8 @@ CarrierWave.configure do |config|
   }
     config.storage = :fog
   config.fog_directory    = 'gruelintentions'
+  #connect to host route and make a directory to store images in temporarily. Need a constant var 
+  config.cache_dir = "../tmp/uploads"
 end
 
 class ImageUploader < CarrierWave::Uploader::Base
