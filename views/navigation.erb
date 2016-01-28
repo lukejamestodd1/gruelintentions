@@ -1,31 +1,7 @@
 
-<% if logged_in? %>
-   
-	<ul class="nav nav-pills">
-	  <li role="presentation" class="active"><a href="/">Home</a></li>
-	  <li role="presentation"><a href="/dishes/new">I did a gruel</a></li>
-
-	  <li role="presentation">
-
-	<form action="/session" method="post">
-   <input type="hidden" name="_method" value="delete">
-   <button>Logout</button>
-  </form>
-		</li>
-	</ul>
-
-<% else %>
-   		<form action="/user/new">
+   	<!-- 	<form action="/user/new">
   		<button style="display: none;" name="signup">sign up</button>
-			</form>
-
-			<ul class="nav nav-pills">
-			  <li role="presentation" class="active"><a href="/">Home</a></li>
-			  <li role="presentation"><a href="/session/new">Login</a></li>
-			  <li role="presentation"><a href="/user/new">Sign Up</a></li>
-			</ul>
-
- <% end %>
+			</form> -->
 
 <div class="navbar-wrapper">
       <div class="container">
@@ -58,15 +34,22 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu<span class="caret"></span></a>
                   <ul class="dropdown-menu">
+                  	<li><a href="#">My cookbook</a></li>
                     <li><a href="#">Top slops</a></li>
                     <li><a href="#">* Meal of Fortune™ *</a></li>
                     <li><a href="#">Festive treats</a></li>
                     <li><a href="#">Gruel for the Summer</a></li>
                     <li role="separator" class="divider"></li>
                     <li class="dropdown-header">I made a terrible mistake</li>
-                    <li><a href="#">Get me out of here</a></li>
-                    
+                    <li>
+                    <form action="/session" method="post">
+   								<input type="hidden" name="_method" value="delete">
+   								<button>Get me out of here</button></li>
                   </ul>
+
+                  
+  								</form>
+
                 </li>
                 <% end %>
               </ul>
