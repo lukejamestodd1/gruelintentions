@@ -1,9 +1,12 @@
      
 require 'sinatra'
 require 'pg'
-require 'sinatra/reloader'
 require 'pry'
 
+#for before deploy - only load these during dev mode
+configure :development do |c|
+  require 'sinatra/reloader'
+end 
 
 
 #require 'aws-sdk'
