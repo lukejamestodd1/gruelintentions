@@ -7,6 +7,7 @@ gem 'pg'
 gem 'pry'
 gem 'carrierwave'
 gem 'fog', '~> 1.28.0'
+gem 'net-ssh'
 
 group :development do
 	
