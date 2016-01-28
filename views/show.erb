@@ -1,12 +1,15 @@
 <h2><%= @dish['name'] %></h2> <h3> by <%= @dish.username %>
 
-<img src="<%= @dish['image.url'] %>" alt="">
-
-<a href="/dishes/<%= @dish['id'] %>/edit">edit dish</a>
+<img src="<%= @dish.image %>" alt="">
 
 <p><%= @dish.description %> </p>
 
+
+<% if current_user.name == @dish.username %>
+<a href="/dishes/<%= @dish['id'] %>/edit">edit dish</a>
 <form action="/dishes/<%= @dish['id'] %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <button>delete</button>
 </form>
+
+<% end %>

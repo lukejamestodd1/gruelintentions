@@ -82,6 +82,8 @@ put '/dishes/:id' do
   @dish.name = params[:name]
   @dish.image = params[:imageFile]
   #@dish.dish_type_id = params[:dish_type_id]
+  @dish.description = params[:description]
+  @dish.username = current_user.name
   @dish.save
   # redirect to another page with a get request
   redirect to "/dishes/#{ params[:id] }"

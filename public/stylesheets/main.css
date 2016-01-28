@@ -21,3 +21,8 @@ h2{
 #none{
 	display: none;
 }
+
+.slideshowbob{
+	max-width: 100%;
+	max-height: 40%;
+}

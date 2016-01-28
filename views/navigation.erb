@@ -1,17 +1,9 @@
 
-
-
 <% if logged_in? %>
-	<div class="alert alert-warning alert-dismissable fade in" role="alert" data-dismiss="alert" aria-label="Close">
-		<p>Welcome back <%= current_user.name %>. Never leave.</p> <span aria-hidden="true">&times;</span>
-	</div>
    
 	<ul class="nav nav-pills">
 	  <li role="presentation" class="active"><a href="/">Home</a></li>
 	  <li role="presentation"><a href="/dishes/new">I did a gruel</a></li>
-
-
-
 
 	  <li role="presentation">
 
@@ -22,8 +14,6 @@
 		</li>
 	</ul>
 
-  
-
 <% else %>
    		<form action="/user/new">
   		<button style="display: none;" name="signup">sign up</button>
@@ -33,11 +23,59 @@
 			  <li role="presentation" class="active"><a href="/">Home</a></li>
 			  <li role="presentation"><a href="/session/new">Login</a></li>
 			  <li role="presentation"><a href="/user/new">Sign Up</a></li>
-			  <li role="presentation"><a href="/dishes/new">I did a gruel</a></li>
 			</ul>
 
  <% end %>
 
+<div class="navbar-wrapper">
+      <div class="container">
 
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <% if logged_in? %>
+              <a class="navbar-brand" href="/"><%= current_user.name %></a>
+              <% end %>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+  							
+  							 <% if logged_in? == false %>
+                <li><a href="/session/new">Login</a></li>
+                <li><a href="/user/new">Sign Up</a></li>
 
+                <% else %>
+                
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Options<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">I did a gruel</a></li>
+                    <li><a href="#">I made a mistake</a></li>
+                    <li><a href="#">get me out of here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
+      </div>
+    </div>
+
+    <% if logged_in? %>
+	<div class="alert alert-warning alert-dismissable fade in" role="alert" data-dismiss="alert" aria-label="Close">
+		<p>Welcome back <%= current_user.name %>. Never leave.</p> <span aria-hidden="true">&times;</span>
+	</div>
+	<% end %>
