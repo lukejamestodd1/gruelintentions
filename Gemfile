@@ -6,7 +6,7 @@ gem 'bcrypt'
 gem 'pg'
 gem 'pry'
 gem 'carrierwave'
-gem 'fog', '~> 1.0.0'
+gem 'fog', '~> 1.28.0'
 
 group :development do
 	
