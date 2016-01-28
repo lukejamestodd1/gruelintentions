@@ -21,9 +21,9 @@
           </div>
         </div>
         <div class="item">
-          <img class="second-slide" src="http://mom.girlstalkinsmack.com/image/042013/6%20Seafood%20Gruels%20Good%20For%20Babies_2.jpg" alt="Second slide">
+          <img class="second-slide" src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/12376188_10156552343810691_7893859351575364858_n.jpg?oh=7406ccb21f7386edb4f7c3834a1887f0&oe=57493CD6&__gda__=1463803779_3aa73c21f664ffef959dd901cc119476" alt="Second slide">
           <div class="container">
-            <div class="carousel-caption" style="color: black">
+            <div class="carousel-caption">
               <h1>Crazy, sexy, gruel.</h1>
               <p>The very best gruel recipes from all over the globe. What are you waiting for? Go for it, gruelfriend</p>
               <p><a class="btn btn-lg btn-primary" href="/session/new" role="button">login</a></p>
@@ -35,7 +35,7 @@
           <div class="container">
             <div class="carousel-caption" style="color: black">
               <h1>Like a tasty morsel?</h1>
-              <p>Check out this week's 'top slops' or take a spin on the Meal of Fortune for a lumpy, viscous surprise</p>
+              <p>Check out the week's 'top slops' or take a spin on the Meal of Fortune™ for a lumpy, viscous surprise</p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse the gallery (aka the gruellery)</a></p>
             </div>
           </div>
@@ -60,9 +60,8 @@
         <h3> <a href="/dishes/<%= dish.id %>"><%= dish.name %></a> by <%= dish.username %></h3>
         </div>
 
-
         <div class="btn-toolbar" role="toolbar">
-				<p><%= dish.likes.count %></p>
+				<p>Licks: <%= dish.likes.count %></p>
 				
         <% if logged_in? %>
         <% if Like.find_by(user_id: current_user.id, dish_id: dish.id) %>
@@ -74,7 +73,7 @@
 	       <% else %>
 				  <form action="/like/<%= dish.id %>" method="post">
         <input type="hidden" name="<%= dish.id %>">
-        <button class="btn btn-primary" role="button">Like  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
+        <button class="btn btn-primary" role="button">Lick  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
         </form>
         <% end %>
         <a href="#" class="btn btn-default" role="button">Share</a>

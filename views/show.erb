@@ -1,11 +1,18 @@
 <h2><%= @dish['name'] %></h2> <h3> by <%= @dish.username %>
 
-<img src="<%= @dish.image %>" alt="">
+			<form action="/user/new">
+  		<button style="display: none;" name="signup">sign up</button>
+			</form>
 
 <p><%= @dish.description %> </p>
 
+<img src="<%= @dish.image %>" alt="">
+
+
+
 
 <% if current_user.name == @dish.username %>
+
 <a href="/dishes/<%= @dish['id'] %>/edit">edit dish</a>
 <form action="/dishes/<%= @dish['id'] %>" method="post">
   <input type="hidden" name="_method" value="delete">

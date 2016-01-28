@@ -1,4 +1,4 @@
-<form action="/dishes/<%= @dish['id'] %>" method="post" enctype="multipart/form-data">
+<form action="/dishes/<%= @dish['id'] %>" method="post" enctype="multipart/form-data" id="newDish">
   <input type="hidden" name="_method" value="put">
 
   <p>
@@ -16,5 +16,5 @@
     <textarea maxlength="400" rows="4" cols="50" name="description" form="newDish" input type="text" name="description">INGREDIENTS: oats, potatoes, water      METHOD: put everything in a pot and boil for a long time</textarea>
 
   <button>gruel it or lose it</button>
-  
+
 </form>
