@@ -96,6 +96,12 @@ delete '/dishes/:id' do
   redirect to '/'
 end
 
+#====Random Dish
+get '/dish/random' do
+  @dishes = Dish.all
+  erb :random
+end
+
 #========================like a dish/unlike
 post '/like/:id' do
   like = Like.new
