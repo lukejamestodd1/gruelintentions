@@ -10,7 +10,7 @@
         <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner" role="listbox">
-        <div class="item active">
+        <div class="item active" align="middle">
           <img class="first-slide" src="http://mom.girlstalkinsmack.com/image/042013/6%20Seafood%20Gruels%20Good%20For%20Babies_2.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption" style="color: black">
@@ -20,7 +20,7 @@
             </div>
           </div>
         </div>
-        <div class="item">
+        <div class="item" align="middle">
           <img class="second-slide" src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/12376188_10156552343810691_7893859351575364858_n.jpg?oh=7406ccb21f7386edb4f7c3834a1887f0&oe=57493CD6&__gda__=1463803779_3aa73c21f664ffef959dd901cc119476" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
@@ -30,13 +30,13 @@
             </div>
           </div>
         </div>
-        <div class="item">
+        <div class="item" align="middle">
           <img class="third-slide" src="http://mom.girlstalkinsmack.com/image/042013/6%20Seafood%20Gruels%20Good%20For%20Babies_2.jpg" alt="Third slide">
           <div class="container">
             <div class="carousel-caption" style="color: black">
               <h1>Like a tasty morsel?</h1>
               <p>Check out the week's 'top slops' or take a spin on the Meal of Fortune™ for a lumpy, viscous surprise</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse the gallery (aka the gruellery)</a></p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse the gruellery</a></p>
             </div>
           </div>
         </div>
@@ -62,6 +62,7 @@
 
         <div class="btn-toolbar" role="toolbar">
 				<p>Licks: <%= dish.likes.count %></p>
+        <p>Recipe: <%= dish.description %></p>
 				
         <% if logged_in? %>
         <% if Like.find_by(user_id: current_user.id, dish_id: dish.id) %>
