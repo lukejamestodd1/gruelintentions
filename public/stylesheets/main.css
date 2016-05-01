@@ -8,7 +8,7 @@ ul li{
 }
 
 .cardycard{
-	float: left;
+	display: inline-block;
 	max-width: 20px;
 }
 h2{
