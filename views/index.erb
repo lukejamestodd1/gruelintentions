@@ -53,9 +53,9 @@
 <% end %>
 
 <% @dishes.each do |dish| %>
-   <div class="row col-sm-6 col-md-4 thumbnail cardycard">
+   <div class="row col-sm-6 col-md-4 thumbnail">
       <a href="/dishes/<%= dish.id %>">
-      <img src="<%= dish.image.url %>" class="img-card" alt="..."></a>
+      <img src="<%= dish.image.url %>" alt="..."></a>
       <div class="caption">
         <h3> <a href="/dishes/<%= dish.id %>"><%= dish.name %></a> by <%= dish.username %></h3>
         </div>
