@@ -3,10 +3,6 @@ require 'sinatra'
 require 'pg'
 require 'pry'
 
-# set :environment, :development
-
-require 'sinatra/reloader' if development?
-
 #for before deploy - only load these during dev mode
 configure :development do |c|
   require 'sinatra/reloader'
@@ -19,7 +15,6 @@ require './models/dish'
 # require './models/dish_type'
 require './models/user'
 require './models/like'
-
 
 enable :sessions
 

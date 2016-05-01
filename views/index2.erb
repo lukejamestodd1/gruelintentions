@@ -3,11 +3,12 @@
 
 <h1>HELLO</h1>
 <div class="row">
+  <% @dishes.each do |dish| %>
         <div class="col s12 m4">
           <div class="card">
             <div class="card-image">
-              <img src="https://bacontime.files.wordpress.com/2013/01/gruel_004.jpg">
-              <span class="card-title">Card Title</span>
+              <img src="<%= dish.image.url %>" alt="https://bacontime.files.wordpress.com/2013/01/gruel_004.jpg">
+              <span class="card-title"><%= dish.name %></span>
             </div>
             <div class="card-content">
               <p>I am a very simple card. I am good at containing small bits of information.
@@ -19,3 +20,5 @@
           </div>
         </div>
       </div>
+    <% end %>
+</div>

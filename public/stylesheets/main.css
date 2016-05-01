@@ -43,9 +43,30 @@ h2{
 }
 .card-img{
 	height: 20em;
+	border-radius: 12%;
 }
 #text-container{
 	margin-bottom: 20vw;
+}
+
+.show{
+	margin-left: 20%;
+}
+
+.card{
+	margin: 30px;
+	border: 1px;
+	border-style: solid;
+	border-color: gray;
+	border-radius: 10%;
+}
+
+.btn-toolbar{
+	margin: 10%;
+}
+
+.caption{
+	text-align: center;
 }
 
 

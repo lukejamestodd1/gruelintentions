@@ -1,3 +1,4 @@
+
 <div class="row"
 <!-- Carousel shown if logged out -->
 <% if logged_in? == false %>
@@ -64,38 +65,41 @@
 <% end %>
 </div>
 
-<div class="row">
+<div class="row card-columns">
 <% @dishes.each do |dish| %>
    <div class="col-sm-6 col-md-4">
+    <div class="card">
       <a href="/dishes/<%= dish.id %>">
         <div class="card-img fill">
           <img src="<%= dish.image.url %>" alt="https://bacontime.files.wordpress.com/2013/01/gruel_004.jpg"></a>
         </div>
-      <div class="caption">
-        <h3> <a href="/dishes/<%= dish.id %>"><%= dish.name %></a> by <%= dish.username %></h3>
+
+        <div class="caption">
+          <h3> <a href="/dishes/<%= dish.id %>"><%= dish.name %></a> by <%= dish.username %></h3>
         </div>
 
         <div class="btn-toolbar" role="toolbar">
-				<p>Licks: <%= dish.likes.count %></p>
-        <p>Recipe: <%= dish.description %></p>
+  				<p>Licks: <%= dish.likes.count %></p>
+          <p>Recipe: <%= dish.description %></p>
 				
-        <% if logged_in? %>
-        <% if Like.find_by(user_id: current_user.id, dish_id: dish.id) %>
-        <form action="/likes" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <input type="hidden" name="dish_id" value="<%= dish.id %>">
-        <button class="btn btn-default" role="button">Unlike</button>
-        </form>
+          <% if logged_in? %>
+            <% if Like.find_by(user_id: current_user.id, dish_id: dish.id) %>
+              <form action="/likes" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input type="hidden" name="dish_id" value="<%= dish.id %>">
+                <button class="btn btn-default" role="button">Unlick</button>
+              </form>
 	       <% else %>
-				  <form action="/like/<%= dish.id %>" method="post">
-        <input type="hidden" name="<%= dish.id %>">
-        <button class="btn btn-primary" role="button">Lick  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
-        </form>
+				    <form action="/like/<%= dish.id %>" method="post">
+              <input type="hidden" name="<%= dish.id %>">
+              <button class="btn btn-primary" role="button">Lick  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
+            </form>
         <% end %>
         <a href="#" class="btn btn-default" role="button">Share</a>
         <% end %>
       </div>
     </div>
+  </div>
 <% end %>
 </div>
 

@@ -1,22 +1,15 @@
-<h2><%= @dish['name'] %></h2> <h3> by <%= @dish.username %>
+<div class="conainer show">
+	<h2><%= @dish['name'] %></h2>
+	<h3> by <%= @dish.username %></h3>
+	<p><%= @dish.description %> </p>
+	<img src="<%= @dish.image.url %>" width="50%" height="50%" alt="">
 
-			<form action="/user/new">
-  		<button style="display: none;" name="signup">sign up</button>
-			</form>
+	<% if session[:user_id] == @dish.user_id %>
+		<a href="/dishes/<%= @dish['id'] %>/edit">edit dish</a>
+		<form action="/dishes/<%= @dish['id'] %>" method="post">
+  		<input type="hidden" name="_method" value="delete">
+  		<button>delete</button>
+		</form>
+	<% end %>
 
-<p><%= @dish.description %> </p>
-
-<img src="<%= @dish.image %>" alt="">
-
-
-
-
-<% if session[:user_id] == @dish.user_id %>
-
-<a href="/dishes/<%= @dish['id'] %>/edit">edit dish</a>
-<form action="/dishes/<%= @dish['id'] %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button>delete</button>
-</form>
-
-<% end %>
+</div>
