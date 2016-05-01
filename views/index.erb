@@ -52,7 +52,7 @@
     </div><!-- /.carousel -->
 <% end %>
 
-<div class="card-columns"></div>
+<div class="card-columns">
   <% @dishes.each do |dish| %>
      <div class="card">
         <a href="/dishes/<%= dish.id %>">
@@ -81,7 +81,7 @@
           <a href="#" class="btn btn-default" role="button">Share</a>
           <% end %>
         </div>
-
+         </div> 
         </div>
       </div>
 </div>
