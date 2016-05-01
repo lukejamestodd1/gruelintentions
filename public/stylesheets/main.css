@@ -22,11 +22,30 @@ h2{
 	display: none;
 }
 
-.slideshowbob{
-	max-width: 100%;
-	max-height: 40%;
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  
+}
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+.outer {
+    height: 30em;
+    width: 100%;
+}
+.main-page {
+	display: block;
+}
+.card-img{
+	height: 20em;
+}
+#text-container{
+	margin-bottom: 20vw;
 }
 
-.img-card{
-	object-fit: cover;
-}
+

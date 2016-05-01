@@ -1,46 +1,57 @@
+<div class="row"
+<!-- Carousel shown if logged out -->
+<% if logged_in? == false %>
+  <div id="myCarousel" class="carousel slide fill outer" data-ride="carousel">
 
-    <% if logged_in? == false %>
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="item active" align="middle">
-          <img class="first-slide" src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/12376188_10156552343810691_7893859351575364858_n.jpg?oh=7406ccb21f7386edb4f7c3834a1887f0&oe=57493CD6&__gda__=1463803779_3aa73c21f664ffef959dd901cc119476" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Sometimes, life can be gruel</h1>
-              <p>The evidence is here</p>
-              <p><a class="btn btn-lg btn-primary" href="/user/new" role="button">sign up today</a></p>
-            </div>
+    <!-- Indicators -->
+    <ol class="carousel-indicators" id="none">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+
+      <!-- first slide -->
+      <div class="item active" align="middle">
+        <img class="first-slide img-cardy" src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/12376188_10156552343810691_7893859351575364858_n.jpg?oh=7406ccb21f7386edb4f7c3834a1887f0&oe=57493CD6&__gda__=1463803779_3aa73c21f664ffef959dd901cc119476" alt="First slide">
+
+        <div class="container">
+          <div class="carousel-caption" id="text-container">
+            <h1>Sometimes, life can be gruel</h1>
+            <p>The evidence is here</p>
+            <p><a class="btn btn-lg btn-primary" href="/user/new" role="button">sign up today</a></p>
           </div>
         </div>
+      </div>
+
+      <!-- second slide -->
         <div class="item" align="middle">
-          <img class="second-slide" src="http://www.gone-ta-pott.com/DSCF0789_op_800x600.jpg" alt="Second slide">
+          <img class="second-slide img-cardy" src="http://www.gone-ta-pott.com/DSCF0789_op_800x600.jpg" alt="Second slide">
           <div class="container">
-            <div class="carousel-caption">
+            <div class="carousel-caption" id="text-container">
               <h1>Crazy, sexy, gruel.</h1>
               <p>The very best gruel recipes from all over the globe. What are you waiting for? Go for it, gruelfriend</p>
               <p><a class="btn btn-lg btn-primary" href="/session/new" role="button">login</a></p>
             </div>
           </div>
         </div>
+
+        <!-- third slide -->
         <div class="item" align="middle">
-          <img class="third-slide" src="http://2.bp.blogspot.com/_kVBIKsx0ZqQ/TUYmSoeBEOI/AAAAAAAAIVM/CgrjS8axFQo/s1600/rice_gruel015b35d.jpg" alt="Third slide">
+          <img class="third-slide img-cardy" src="http://2.bp.blogspot.com/_kVBIKsx0ZqQ/TUYmSoeBEOI/AAAAAAAAIVM/CgrjS8axFQo/s1600/rice_gruel015b35d.jpg" alt="Third slide">
           <div class="container">
-            <div class="carousel-caption">
+            <div class="carousel-caption" id="text-container">
               <h1>Like a tasty morsel?</h1>
               <p>Check out the week's 'top slops' or take a spin on the Meal of Fortune™ for a lumpy, viscous surprise</p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse the gruellery</a></p>
             </div>
           </div>
         </div>
-      </div>
+
+      </div> <!-- /carousel inner -->
+
+      <!-- carousel controls -->
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -49,13 +60,17 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-    </div><!-- /.carousel -->
+  </div><!-- /.carousel -->
 <% end %>
+</div>
 
+<div class="row">
 <% @dishes.each do |dish| %>
-   <div class="row col-sm-6 col-md-4 thumbnail">
+   <div class="col-sm-6 col-md-4">
       <a href="/dishes/<%= dish.id %>">
-      <img src="<%= dish.image.url %>" alt="..."></a>
+        <div class="card-img fill">
+          <img src="<%= dish.image.url %>" alt="https://bacontime.files.wordpress.com/2013/01/gruel_004.jpg"></a>
+        </div>
       <div class="caption">
         <h3> <a href="/dishes/<%= dish.id %>"><%= dish.name %></a> by <%= dish.username %></h3>
         </div>
@@ -80,11 +95,8 @@
         <a href="#" class="btn btn-default" role="button">Share</a>
         <% end %>
       </div>
-
-      </div>
     </div>
-  </div>
-
-
 <% end %>
+</div>
+
 
